@@ -1,0 +1,22 @@
+{
+  "generator-template-ui5-project": {
+    "projectname": "navigation",
+    "namespaceUI5": "sap.ui.demo",
+    "platform": "SAP Launchpad service",
+    "viewtype": "XML",
+    "ui5libs": "Content delivery network (SAPUI5)",
+    "newdir": true,
+    "codeassist": true,
+    "namespaceURI": "sap/ui/demo",
+    "opa5pos": [
+      "Main"
+    ],
+    "opa5Journeys": [
+      "Main"
+    ],
+    "uimodules": [
+      "uimodule"
+    ],
+    "setupCompleted": true
+  }
+}
