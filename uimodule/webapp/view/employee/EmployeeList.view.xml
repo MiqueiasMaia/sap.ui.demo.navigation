@@ -1,0 +1,11 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="sap.ui.demo.navigation.controller.employee.EmployeeList" xmlns="sap.m">
+    <Page id="employeeListPage" title="{i18n>EmployeeList}" showNavButton="true" navButtonPress="onNavBack" class="sapUiResponsiveContentPadding">
+        <content>
+            <List id="employeeList" headerText="{i18n>ListOfAllEmployees}" items="{/Employees}">
+                <items>
+                    <StandardListItem id="generatedList" title="{FirstName} {LastName}" iconDensityAware="false" iconInset="false"></StandardListItem>
+                </items>
+            </List>
+        </content>
+    </Page>
+</mvc:View>
