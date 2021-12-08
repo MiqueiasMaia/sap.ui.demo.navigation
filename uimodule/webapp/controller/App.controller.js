@@ -8,11 +8,8 @@ sap.ui.define([
     function (BaseController, MessageToast) {
         "use strict";
 
-        return BaseController.extend("sap.ui.demo.navigation.controller.MainView", {
-            onDisplayNotFound: function (){
-                this.getRouter().getTargets().display("notFound", {
-                    fromTarget: "home"
-                });
+        return BaseController.extend("sap.ui.demo.navigation.controller.App", {
+            onInit: function () {
             }
         });
     });

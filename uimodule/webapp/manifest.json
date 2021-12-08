@@ -75,32 +75,42 @@
         "viewPath": "sap.ui.demo.navigation.view",
         "controlAggregation": "pages",
         "controlId": "app",
-        "clearControlAggregation": false
+        "clearControlAggregation": false,
+        "transition": "slide",
+        "agregation": "pages",
+        "bypassed": {
+          "target": "notFound"
+        }
       },
       "routes": [
         {
-          "name": "RouteMainView",
-          "pattern": "RouteMainView",
-          "target": [
-            "TargetMainView"
-          ]
+          "name": "appHome",
+          "pattern": "",
+          "target": "home"
         }
       ],
       "targets": {
-        "TargetMainView": {
+        "home": {
           "viewType": "XML",
           "transition": "slide",
           "clearControlAggregation": false,
           "viewId": "MainView",
-          "viewName": "MainView"
+          "viewName": "MainView",
+          "viewLevel": 1
+        },
+        "notFound": {
+          "viewType": "XML",
+          "viewName": "NotFound",
+          "viewId": "notFound",
+          "transition": "show"
         }
       }
     },
     "rootView": {
-      "viewName": "sap.ui.demo.navigation.view.MainView",
+      "viewName": "sap.ui.demo.navigation.view.App",
       "type": "XML",
       "async": true,
-      "id": "MainView"
+      "id": "AppView"
     }
   },
   "sap.cloud": {

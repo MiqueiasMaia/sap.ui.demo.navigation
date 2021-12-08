@@ -1,16 +1,7 @@
-<mvc:View
-    controllerName="sap.ui.demo.navigation.controller.MainView"
-    xmlns:mvc="sap.ui.core.mvc"
-    displayBlock="true"
-    xmlns="sap.m"
->
-    <Shell id="shell">
-        <App id="app">
-            <pages>
-                <Page id="page" title="{i18n>title}">
-                    <content />
-                </Page>
-            </pages>
-        </App>
-    </Shell>
+<mvc:View controllerName="sap.ui.demo.navigation.controller.MainView" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+    <Page id="_IDGenPage1" title="{i18n>homePageTitle}" class="sapUiResponsiveContentPadding">
+        <content>
+           <Button id="displayNotFoundBtn" text="{i18n>DisplayNotFound}" press="onDisplayNotFound" class="sapUiTinyMarginEnd"/>
+        </content>
+     </Page>
 </mvc:View>

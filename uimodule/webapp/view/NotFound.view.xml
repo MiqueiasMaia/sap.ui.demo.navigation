@@ -1,0 +1,3 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="sap.ui.demo.navigation.controller.NotFound">
+    <MessagePage id="_IDGenMessagePage1" title="{i18n>NotFound}" text="{i18n>NotFound.text}" description="{i18n>NotFound.description}" showNavButton="true" navButtonPress="onNavBack" ></MessagePage>
+</mvc:View>
