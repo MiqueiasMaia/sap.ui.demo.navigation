@@ -4,7 +4,7 @@ sap.ui.define([
     "use strict";
 
     return BaseController.extend("sap.ui.demo.navigation.controller.employee.EmployeeList", {
-        onListItemPress: function (oEvent) {
+        onListItemPressed: function (oEvent) {
             const oItem = oEvent.getSource();
             const oCtx = oItem.getBindingContext();
             this.getRouter().navTo("employee", {

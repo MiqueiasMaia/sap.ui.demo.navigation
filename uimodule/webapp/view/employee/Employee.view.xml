@@ -1,39 +1,34 @@
-<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="sap.ui.demo.navigation.controller.employee.Employee" xmlns="sap.m" busyIndicatorDelay="0">
-    <Page id="employeePage" title="{i18n>EmployeeDetailsOf} {FirstName} {LastName}" showNavButton="true" navButtonPress="onNavBack" class="sapUiResponsiveContentPadding">
-        <content>
-            <Panel id="employeePanel" width="auto" class="sapUiResponsiveMargin sapUiNoContentPadding">
-                <headerToolbar>
-                    <Toolbar id="_IDGenToolbar1">
-                        <Title id="_IDGenTitle1" text="{i18n>EmployeeIDColon} {EmployeeID}" level="H2"></Title>
-                        <ToolbarSpacer id="_IDGenToolbarSpacer1" ></ToolbarSpacer>
-                    </Toolbar>
-                </headerToolbar>
-                <content>
-					<f:SimpleForm id="_IDGenSimpleForm1"
-						minWidth="1024"
-						editable="false"
-						layout="ResponsiveGridLayout"
-						labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4"
-						columnsL="1" columnsM="1">
+<mvc:View xmlns:f="sap.ui.layout.form" xmlns:mvc="sap.ui.core.mvc" controllerName="sap.ui.demo.navigation.controller.employee.Employee" xmlns="sap.m" busyIndicatorDelay="0">
+	<Page id="employeePage" title="{i18n>EmployeeDetailsOf} {FirstName} {LastName}" showNavButton="true" navButtonPress="onNavBack" class="sapUiResponsiveContentPadding">
+		<content>
+			<Panel id="employeePanel" width="auto" class="sapUiResponsiveMargin sapUiNoContentPadding">
+				<headerToolbar>
+					<Toolbar id="_IDGenToolbar1">
+						<Title id="_IDGenTitle1" text="{i18n>EmployeeIDColon} {EmployeeID}" level="H2"></Title>
+						<ToolbarSpacer id="_IDGenToolbarSpacer1"></ToolbarSpacer>
+					</Toolbar>
+				</headerToolbar>
+				<content>
+					<f:SimpleForm id="_IDGenSimpleForm1" minWidth="1024" editable="false" layout="ResponsiveGridLayout" labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="1" columnsM="1">
 						<f:content>
-							<Label id="_IDGenLabel1" text="{i18n>formFirstName}"/>
-							<Text id="_IDGenText1" text="{FirstName}"/>
-							<Label id="_IDGenLabel2" text="{i18n>formLastName}"/>
-							<Text id="_IDGenText2" text="{LastName}"/>
-							<Label id="_IDGenLabel3" text="{i18n>formAddress}"/>
-							<Text id="_IDGenText3" text="{Address}"/>
-							<Label id="_IDGenLabel4" text="{i18n>formCity}"/>
-							<Text id="_IDGenText4" text="{City}, {Region}"/>
-							<Label id="_IDGenLabel5" text="{i18n>formPostalCode}"/>
-							<Text id="_IDGenText5" text="{PostalCode}"/>
-							<Label id="_IDGenLabel6" text="{i18n>formPhoneHome}"/>
-							<Text id="_IDGenText6" text="{HomePhone}"/>
-							<Label id="_IDGenLabel7" text="{i18n>formCountry}"/>
-							<Text id="_IDGenText7" text="{Country}"/>
+							<Label id="_IDGenLabel1" text="{i18n>formFirstName}" />
+							<Text id="_IDGenText1" text="{FirstName}" />
+							<Label id="_IDGenLabel2" text="{i18n>formLastName}" />
+							<Text id="_IDGenText2" text="{LastName}" />
+							<Label id="_IDGenLabel3" text="{i18n>formAddress}" />
+							<Text id="_IDGenText3" text="{Address}" />
+							<Label id="_IDGenLabel4" text="{i18n>formCity}" />
+							<Text id="_IDGenText4" text="{City}, {Region}" />
+							<Label id="_IDGenLabel5" text="{i18n>formPostalCode}" />
+							<Text id="_IDGenText5" text="{PostalCode}" />
+							<Label id="_IDGenLabel6" text="{i18n>formPhoneHome}" />
+							<Text id="_IDGenText6" text="{HomePhone}" />
+							<Label id="_IDGenLabel7" text="{i18n>formCountry}" />
+							<Text id="_IDGenText7" text="{Country}" />
 						</f:content>
 					</f:SimpleForm>
 				</content>
-            </Panel>
-        </content>
-    </Page>
+			</Panel>
+		</content>
+	</Page>
 </mvc:View>

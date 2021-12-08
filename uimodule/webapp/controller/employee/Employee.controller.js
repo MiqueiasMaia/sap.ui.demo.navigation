@@ -3,17 +3,18 @@ sap.ui.define([
 ], function (BaseController) {
     "use strict";
 
-    return BaseController.extend("sap.ui.demo.navigation.controller.employee.EmployeeList", {
+    return BaseController.extend("sap.ui.demo.navigation.controller.employee.Employee", {
         onInit: function () {
-            const oRouter = this.getRouter();
-            oRouter.getRouter('employee').attachRouteMatched(this._onRouteMatched, this);
+            var oRouter = this.getRouter();
+            oRouter.getRoute("employee").attachMatched(this._onRouteMatched, this);
         },
         _onRouteMatched: function (oEvent) {
-            const oArgs = oEvent.getParameter('arguments');
-            const oView = this.getView();
+            var oArgs, oView;
+            oArgs = oEvent.getParameter("arguments");
+            oView = this.getView();
 
             oView.bindElement({
-                path: '/Employees(' + oArgs.employeeId + ')',
+                path: "/Employees(" + oArgs.employeeId + ")",
                 events: {
                     change: this._onBindingChange.bind(this),
                     dataRequested: function (oEvent) {
