@@ -1,7 +1,7 @@
 <mvc:View controllerName="sap.ui.demo.navigation.controller.employee.Resume" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc">
     <Page title="{i18n>ResumeOf} {FirstName} {LastName}" id="employeeResumePage" showNavButton="true" navButtonPress=".onNavBack">
         <content>
-            <IconTabBar id="iconTabBar" headerBackgroundDesign="Transparent" class="sapUiResponsiveContentPadding" binding="{Resume}">
+            <IconTabBar select="onTabSelect" selectedKey="{view>/selectedTabKey}" id="iconTabBar" headerBackgroundDesign="Transparent" class="sapUiResponsiveContentPadding" binding="{Resume}">
                 <items>
                     <IconTabFilter id="infoTab" text="{i18n>tabInfo}" key="Info">
                         <Text id="_IDGenText1" text="{Information}" />
@@ -10,10 +10,10 @@
                         <mvc:XMLView id="_IDGenXMLView1" viewName="sap.ui.demo.navigation.view.employee.ResumeProjects"></mvc:XMLView>
                     </IconTabFilter>
                     <IconTabFilter id="hobbiesTab" text="{i18n>tabHobbies}" key="Hobbies">
-                        <Text id="_IDGenText2" text="{Hobbies}" />
+                        <!-- place content via lazy loading -->
                     </IconTabFilter>
                     <IconTabFilter id="notesTab" text="{i18n>tabNotes}" key="Notes">
-                        <Text id="_IDGenText3" text="{Notes}" />
+                        <!-- place content via lazy loading -->
                     </IconTabFilter>
                 </items>
             </IconTabBar>
