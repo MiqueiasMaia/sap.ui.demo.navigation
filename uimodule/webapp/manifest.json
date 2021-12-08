@@ -24,15 +24,15 @@
       }
     },
     "dataSources": {
-			"employeeRemote": {
-				"uri": "https://cors-anywhere.herokuapp.com/https://services.odata.org/V3/Northwind/Northwind.svc/",
-				"type": "OData",
-				"settings": {
-					"odataVersion": "2.0",
-					"localUri" : "localService/metadata.xml"
-				}
-			}
-		}
+      "employeeRemote": {
+        "uri": "https://cors-anywhere.herokuapp.com/https://services.odata.org/V3/Northwind/Northwind.svc/",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "2.0",
+          "localUri": "localService/metadata.xml"
+        }
+      }
+    }
   },
   "sap.ui": {
     "technology": "UI5",
@@ -69,7 +69,7 @@
           "bundleName": "sap.ui.demo.navigation.i18n.i18n"
         }
       },
-      "" : {
+      "": {
         "dataSource": "employeeRemote"
       }
     },
@@ -110,6 +110,11 @@
           "pattern": "employees/{employeeId}",
           "name": "employee",
           "target": "employee"
+        },
+        {
+          "pattern": "employees/{employeeId}/resume",
+          "name": "employeeResume",
+          "target": "employeeResume"
         }
       ],
       "targets": {
@@ -131,16 +136,22 @@
           "viewType": "XML",
           "viewName": "EmployeeList",
           "viewId": "employeeList",
-          "transition": "slide",
+          "transition": "fade",
           "viewPath": "sap.ui.demo.navigation.view.employee",
           "level": 2
         },
-        "employee" : {
+        "employee": {
           "viewType": "XML",
           "viewName": "employee.Employee",
           "viewId": "employee",
           "transition": "slide",
           "level": 3
+        },
+        "employeeResume": {
+          "viewId": "resume",
+          "viewName": "employee.Resume",
+          "viewLevel": 4,
+          "transition": "flip"
         }
       }
     },
