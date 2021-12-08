@@ -3,7 +3,7 @@
         <content>
             <List id="employeeList" headerText="{i18n>ListOfAllEmployees}" items="{/Employees}">
                 <items>
-                    <StandardListItem id="generatedList" title="{FirstName} {LastName}" iconDensityAware="false" iconInset="false"></StandardListItem>
+                    <StandardListItem type="Navigation" press="onListItemPressed" id="generatedList" title="{FirstName} {LastName}" iconDensityAware="false" iconInset="false"></StandardListItem>
                 </items>
             </List>
         </content>

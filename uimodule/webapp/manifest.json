@@ -22,7 +22,17 @@
           "icon": "sap-icon://add"
         }
       }
-    }
+    },
+    "dataSources": {
+			"employeeRemote": {
+				"uri": "https://cors-anywhere.herokuapp.com/https://services.odata.org/V3/Northwind/Northwind.svc/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri" : "localService/metadata.xml"
+				}
+			}
+		}
   },
   "sap.ui": {
     "technology": "UI5",
@@ -58,6 +68,9 @@
         "settings": {
           "bundleName": "sap.ui.demo.navigation.i18n.i18n"
         }
+      },
+      "" : {
+        "dataSource": "employeeRemote"
       }
     },
     "resources": {
@@ -92,6 +105,11 @@
           "name": "employeeList",
           "pattern": "employees",
           "target": "employees"
+        },
+        {
+          "pattern": "employees/{employeeId}",
+          "name": "employee",
+          "target": "employee"
         }
       ],
       "targets": {
@@ -116,6 +134,13 @@
           "transition": "slide",
           "viewPath": "sap.ui.demo.navigation.view.employee",
           "level": 2
+        },
+        "employee" : {
+          "viewType": "XML",
+          "viewName": "employee.Employee",
+          "viewId": "employee",
+          "transition": "slide",
+          "level": 3
         }
       }
     },
