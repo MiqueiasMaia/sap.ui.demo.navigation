@@ -1,13 +1,15 @@
 sap.ui.define([
     "sap/ui/demo/navigation/controller/BaseController",
-    "sap/ui/model/json/JSONModel",
+    "sap/ui/model/json/JSONModel"
+
 ], function (BaseController, JSONModel) {
     "use strict";
-    const _aValidTabKeys = ["Info", "Projects", "Hobbies", "Notes"];
+    var _aValidTabKeys = ["Info", "Projects", "Hobbies", "Notes"];
     return BaseController.extend("sap.ui.demo.navigation.controller.employee.Resume", {
         onInit: function () {
             var oRouter = this.getRouter();
             this.getView().setModel(new JSONModel(), "view");
+
             oRouter.getRoute("employeeResume").attachMatched(this._onRouteMatched, this);
         },
         _onRouteMatched: function (oEvent) {
@@ -28,32 +30,36 @@ sap.ui.define([
             });
             oQuery = oArgs["?query"];
             if (oQuery && _aValidTabKeys.indexOf(oQuery.tab) > -1) {
-                oView.getModel("view").setProperty("/selectedTab", oQuery.tab);
-                if (oQuery.tab === "Hobbies" || oQuery.tab === "Notes") {
-                    this.getRouter().getTargets().display("resumeTab" + oQuery.tab);
-                }
+                oView.getModel("view").setProperty("/selectedTabKey", oQuery.tab);
+                if (oQuery.tab === "Hobbies" || oQuery.tab === "Notes"){
+					this.getRouter().getTargets().display("resumeTab" + oQuery.tab);
+				}
             } else {
+                // the default query param should be visible at all time
                 this.getRouter().navTo("employeeResume", {
                     employeeId: oArgs.employeeId,
                     "?query": {
                         tab: _aValidTabKeys[0]
                     }
-                }, true);
+                }, true /*no history*/);
             }
+
         },
         _onBindingChange: function (oEvent) {
+            // No data for the binding
             if (!this.getView().getBindingContext()) {
                 this.getRouter().getTargets().display("notFound");
             }
         },
         onTabSelect: function (oEvent) {
-            const oContext = this.getView().getBindingContext();
+            var oCtx = this.getView().getBindingContext();
             this.getRouter().navTo("employeeResume", {
-                employeeId: oContext.getProperty("EmployeeID"),
+                employeeId: oCtx.getProperty("EmployeeID"),
                 "?query": {
                     tab: oEvent.getParameter("selectedKey")
                 }
-            }, true);
+            }, true /*without history*/);
         }
+
     });
 });

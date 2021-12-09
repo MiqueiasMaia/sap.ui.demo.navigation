@@ -1,0 +1,56 @@
+<mvc:View controllerName="sap.ui.demo.navigation.controller.employee.overview.EmployeeOverviewContent" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc">
+    <Table id="employeesTable" items="{/Employees}" itemPress="onItemPressed">
+        <headerToolbar>
+            <Toolbar id="_IDGenToolbar1">
+                <Title id="_IDGenTitle1" text="{i18n>Employees}" level="H2" />
+                <ToolbarSpacer id="_IDGenToolbarSpacer1" />
+                <SearchField id="searchField" search=".onSearchEmployeesTable" width="50%" />
+                <Button id="_IDGenButton1" icon="sap-icon://sort" press=".onSortButtonPressed" />
+            </Toolbar>
+        </headerToolbar>
+        <columns>
+            <Column id="employeeIDCol">
+                <Text id="_IDGenText1" text="{i18n>EmployeeID}" />
+            </Column>
+            <Column id="firstNameCol" demandPopin="true">
+                <Text id="_IDGenText2" text="{i18n>FirstName}" />
+            </Column>
+            <Column id="lastNameCol" demandPopin="true">
+                <Text id="_IDGenText3" text="{i18n>LastName}" />
+            </Column>
+            <Column id="addressCol" minScreenWidth="Tablet" demandPopin="true">
+                <Text id="_IDGenText4" text="{i18n>Address}" />
+            </Column>
+            <Column id="cityCol" minScreenWidth="Tablet" demandPopin="true">
+                <Text id="_IDGenText5" text="{i18n>City}" />
+            </Column>
+            <Column id="regionCol" minScreenWidth="Tablet" demandPopin="true">
+                <Text id="_IDGenText6" text="{i18n>Region}" />
+            </Column>
+            <Column id="postalCodeCol" minScreenWidth="Tablet" demandPopin="true">
+                <Text id="_IDGenText7" text="{i18n>PostalCode}" />
+            </Column>
+            <Column id="countryCol" minScreenWidth="Tablet" demandPopin="true">
+                <Text id="_IDGenText8" text="{i18n>Country}" />
+            </Column>
+            <Column id="homePhoneCol" minScreenWidth="Tablet" demandPopin="true" hAlign="Right">
+                <Text id="_IDGenText9" text="{i18n>Phone}" />
+            </Column>
+        </columns>
+        <items>
+            <ColumnListItem id="_IDGenColumnListItem1" type="Active">
+                <cells>
+                    <Text id="_IDGenText10" text="{EmployeeID}" />
+                    <Text id="_IDGenText11" text="{FirstName}" />
+                    <Text id="_IDGenText12" text="{LastName}" />
+                    <Text id="_IDGenText13" text="{Address}" />
+                    <Text id="_IDGenText14" text="{City}" />
+                    <Text id="_IDGenText15" text="{Region}" />
+                    <Text id="_IDGenText16" text="{PostalCode}" />
+                    <Text id="_IDGenText17" text="{Country}" />
+                    <Text id="_IDGenText18" text="{HomePhone}" />
+                </cells>
+            </ColumnListItem>
+        </items>
+    </Table>
+</mvc:View>
